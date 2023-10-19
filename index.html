@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .nav{
+            background-color: black;
+            color: white;
+            width: 100%;
+            height: 30px;
+        }
+        .nav a{
+            color: aliceblue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+           
+        }
+        .nav li{
+            margin: 0 15px;
+        }
+        .container{
+            /* border: 2px solid red; */
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
     <title>Event-manager-app</title>
+    
 </head>
 <body>
+    <div class="nav">
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="events.html">Events</a></li>
+            <!-- <li><a href="index.html"></a></li> -->
+        </ul>
+    </div>
     <div class="container">
         <h1>Login Page</h1>
         <form id="loginform">
