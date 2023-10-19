@@ -4,6 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Events</title>
+    <style>
+      .event-container {
+      }
+
+      .events-card {
+        /* border: 2px solid red; */
+        display: grid;
+        grid-template-rows: repeat(4fr, 2);
+        /* flex-wrap: wrap; */
+        gap: 15px;
+        text-align: center;
+        display: block;
+      }
+      .events-card img {
+        max-width: 200px;
+      }
+      .filter-sort {
+        margin: auto;
+        text-align: center;
+        padding:50px;
+        /* border: 2px solid red; */
+      }
+    </style>
   </head>
   <body>
     <div class="event-container">
@@ -25,12 +48,8 @@
       <div class="events-card" id="card">
 
       </div>
-
     </div>
   </body>
 </html>
 
 <script src="events.js"></script>
-
-
-
