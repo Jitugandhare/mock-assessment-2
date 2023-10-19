@@ -4,7 +4,7 @@ if (!token) {
   window.location.href = "index.html";
 }
 
-//  getData();
+getData();
 
 function getData() {
   try {
@@ -26,7 +26,7 @@ function getData() {
           <td>${el.category}</td>
           <td>${el.price}</td>
             <td><button class="edit-btn" data-id=${el.id}>Edit</button></td>
-            <td><button class="delete-btn" data-id=${el.id}>Delete</button></td>`;
+            <td><button class="delete-btn" data-id=${el.id} >Delete</button></td>`;
 
           tbody.appendChild(tr);
         });
@@ -63,6 +63,8 @@ function getData() {
 //   }
 // }
 
+//Post
+
 document.getElementById("eform").addEventListener("submit", async function (e) {
   e.preventDefault();
   const image = document.getElementById("eventpost").value;
@@ -97,22 +99,44 @@ document.getElementById("eform").addEventListener("submit", async function (e) {
   }
 });
 
+//delete
 
+document.getElementById("etable").addEventListener("click", async function (e) {
+  if (e.target.classList.contains("delete-btn")) {
+    const e_id = e.target.dataset.id;
+    try {
+      let res = await fetch(`${apiUrl}/events/${e_id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
+      const del = await res.json();
+      getData();
+      console.log(del);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+});
 
+// async function deleteEvent() {
 
+// }
 
+//update
 
+async function EditEvent(id) {
+  try {
+    let res = await fetch(`${apiUrl}/events/${id}`);
+    let data = await res.json();
+    document.getElementById("eventname").value = data.name;
+    document.getElementById("date").value = data.date;
+    document.getElementById("location").value = data.location;
 
-
-
-
-
-
-
-
-
-
-
-
-getData();
+    document.getElementById("")
+  } catch (err) {
+    console.log(err);
+  }
+}
