@@ -4,7 +4,7 @@ if (!token) {
   window.location.href = "index.html";
 }
 
- getData();
+//  getData();
 
 function getData() {
   try {
@@ -15,7 +15,7 @@ function getData() {
         const tbody = etable.querySelector("tbody");
         tbody.innerHTML = ``;
 
-        // console.log(data);
+        console.log(data);
 
         data.forEach((el) => {
           const tr = document.createElement("tr");
@@ -36,5 +36,83 @@ function getData() {
   }
 }
 
+// async function addEvent() {
+//   try {
+//     let data = {
+//       image: document.getElementById("eventpost").ariaValueMax,
+//       name: document.getElementById("eventname").value,
+//       description: document.getElementById("description").value,
+//       date: document.getElementById("date").value,
+//       location: document.getElementById("location").value,
+//       category: document.getElementById("eventcategory").value,
+//       price: document.getElementById("price").value,
+//     };
+
+//     let res = await fetch(`${apiUrl}/events`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(data),
+//     });
+
+//     let ans = await res.json();
+//     console.log(ans);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+document.getElementById("eform").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const image = document.getElementById("eventpost").value;
+  const name = document.getElementById("eventname").value;
+  const description = document.getElementById("description").value;
+  const date = document.getElementById("date").value;
+  const location = document.getElementById("location").value;
+  const category = document.getElementById("eventcategory").value;
+  const price = document.getElementById("price").value;
+
+  try {
+    const res = await fetch(`${apiUrl}/events`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        poster: image,
+        name: name,
+        description: description,
+        date: date,
+        location: location,
+        category: category,
+        price: price,
+      }),
+    });
+    const data = await res.json();
+    console.log(data);
+    getData();
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+getData();
