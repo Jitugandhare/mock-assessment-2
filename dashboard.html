@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="Dashboard-page">
+      <h1>Admin</h1>
+      <form id="eform">
+        <input type="text" placeholder="image" id="eventpost" />
+        <input type="text" placeholder="eventname" id="eventname" />
+
+        <textarea id="description" name="description" rows="5" cols="33">
+        </textarea>
+
+        <input type="date" placeholder="date" id="date" />
+        <input type="text" placeholder="Location" id="location" />
+        <select id="eventcategory">
+          <option>Category</option>
+          <option value="music">Music</option>
+          <option value="sports">Sports</option>
+          <option value="workshop">Workshop</option>
+        </select>
+        <input type="number" id="price" placeholder="price" />
+        <button type="submit">Add</button>
+      </form>
+
+      <table id="etable">
+        <thead>
+          <tr>
+            <th>Name of the Event</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script src="dashboard.js"></script>
+
+

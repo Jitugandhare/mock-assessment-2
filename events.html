@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <div class="event-container">
+      <div class="filter-sort">
+        <label for="categoryFilter">Filter By Category:</label>
+        <select id="cFilter">
+          <option value="All">All</option>
+          <option value="music">Music</option>
+          <option value="sports">Sports</option>
+          <option value="workshop">Workshop</option>
+        </select>
+        <label for="sortPrice">Sort by Price:</label>
+        <select id="pricesort">
+          <option value="Ascending">Ascending</option>
+          <option value="Descending">Descending</option>
+        </select>
+      </div>
+
+      <div class="events-card" id="card">
+
+      </div>
+
+    </div>
+  </body>
+</html>
+
+<script src="/events.js"></script>
