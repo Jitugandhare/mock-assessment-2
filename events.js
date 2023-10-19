@@ -18,24 +18,7 @@ function eventCards(events) {
   });
 }
 
-document.getElementById("cFilter").addEventListener("change", function () {
-  const selectedCategory = this.value;
-  if (selectedCategory === "All") {
-    fetch(`${apiUrl}/events`)
-      .then((response) => response.json())
-      .then((data) => {
-        eventCards(data);
-      })
-      .catch((error) => console.error(error));
-  } else {
-    fetch(`${apiUrl}/events?category=${selectedCategory}`)
-      .then((response) => response.json())
-      .then((data) => {
-        eventCards(data);
-      })
-      .catch((error) => console.error(error));
-  }
-});
+
 
 document.getElementById("pricesort").addEventListener("change", function () {
   const sortDirection = this.value;
